@@ -20,9 +20,9 @@ Most organizations `don’t lose services because they lack security tools`, the
 Without `active SSL/TLS monitoring`, you are one missed certificate renewal away from `service outage`, one weak protocol away from a `vulnerability`, and one misconfiguration away from `failing compliance checks.`
 
 This project ensures you are never operating in the dark by continuously exposing:
-`Certificates that are silently approaching expiration`
-`Weak or outdated SSL/TLS configurations attackers look for first`
-`Misconfigured or non-compliant endpoints hiding in your infrastructure`
+- `Certificates that are silently approaching expiration`
+- `Weak or outdated SSL/TLS configurations attackers look for first`
+- `Misconfigured or non-compliant endpoints hiding in your infrastructure`
 
 With automated checks and real-time alerts, your team shifts from:
 `“Why is the site down?”` to `“We fixed it before users even noticed.”`
@@ -36,6 +36,6 @@ Implementing this project means:
 - No manual tracking that fails when it matters most
 
 Instead, you get:
-`Predictability` – You know issues before they become incidents
-`Control` – Full visibility across all certificates and endpoints
-`Confidence` – Your services remain secure, trusted, and compliant
+- `Predictability` – You know issues before they become incidents
+- `Control` – Full visibility across all certificates and endpoints
+- `Confidence` – Your services remain secure, trusted, and compliant
