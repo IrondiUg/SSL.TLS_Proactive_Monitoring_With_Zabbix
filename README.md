@@ -40,5 +40,5 @@ Instead, you get:
 - `Control` – Full visibility across all certificates and endpoints
 - `Confidence` – Your services remain secure, trusted, and compliant
 
-
+# Zabbix
 <img width="1350" height="930" alt="ssltls-monitoring-flow-zabbix-based-proactive-ei8fdi" src="https://github.com/user-attachments/assets/6ff8f23b-73ef-4319-ac07-7496621a6433" />
