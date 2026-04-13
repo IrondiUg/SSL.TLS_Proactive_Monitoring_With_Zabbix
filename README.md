@@ -17,7 +17,7 @@ Most organizations `don’t lose services because they lack security tools`, the
 
 **This solution eliminates that blind spot.**
 
-Without `active SSL/TLS monitoring`, you are one missed certificate renewal away from `service outage`, one weak protocol away from a `vulnerability`, and one misconfiguration away from `failing compliance checks.`
+Without `active SSL/TLS monitoring`, you are one missed-certificate-renewal away from `service outage`, one weak protocol away from a `vulnerability`, and one misconfiguration away from `failing compliance checks.`
 
 This project ensures you are never operating in the dark by continuously exposing:
 - `Certificates that are silently approaching expiration`
