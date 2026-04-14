@@ -121,7 +121,7 @@ services:
     ports:
       - "8080:8080"
 ```
-**Start Zabbix Stac**
+**Start Zabbix Stack**
 ```
 docker compose up -d
 ```
