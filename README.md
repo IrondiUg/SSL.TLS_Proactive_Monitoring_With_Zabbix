@@ -42,3 +42,97 @@ Instead, you get:
 
 # Zabbix
 <img width="1350" height="930" alt="ssltls-monitoring-flow-zabbix-based-proactive-ei8fdi" src="https://github.com/user-attachments/assets/6ff8f23b-73ef-4319-ac07-7496621a6433" />
+
+This guide walks you through installing and running Zabbix using Docker and Docker Compose. It deploys a complete monitoring stack including:
+- Zabbix Server
+- Zabbix Web Interface
+- MySQL Database
+
+**Install Docker (If Not Installed)**
+```
+sudo apt update
+sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository \
+   "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) stable"
+sudo apt update
+sudo apt install -y docker-ce docker-ce-cli containerd.io
+```
+**Start and enable Docker**
+```
+sudo systemctl start docker
+sudo systemctl enable docker
+```
+
+**Install Docker Compose (Plugin)**
+```
+sudo apt install docker-compose-plugin
+```
+---
+**Create docker-compose.yml and paste exact content**
+```
+version: '3.5'
+
+services:
+  mysql-server:
+    image: mysql:8.0
+    container_name: zabbix-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: zabbix
+      MYSQL_USER: zabbix
+      MYSQL_PASSWORD: zabbix_pass
+      MYSQL_ROOT_PASSWORD: root_pass
+    command:
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_bin
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  zabbix-server:
+    image: zabbix/zabbix-server-mysql:latest
+    container_name: zabbix-server
+    restart: unless-stopped
+    depends_on:
+      - mysql-server
+    environment:
+      DB_SERVER_HOST: mysql-server
+      MYSQL_DATABASE: zabbix
+      MYSQL_USER: zabbix
+      MYSQL_PASSWORD: zabbix_pass
+    ports:
+      - "10051:10051"
+
+  zabbix-web:
+    image: zabbix/zabbix-web-nginx-mysql:latest
+    container_name: zabbix-web
+    restart: unless-stopped
+    depends_on:
+      - mysql-server
+      - zabbix-server
+    environment:
+      DB_SERVER_HOST: mysql-server
+      MYSQL_DATABASE: zabbix
+      MYSQL_USER: zabbix
+      MYSQL_PASSWORD: zabbix_pass
+      ZBX_SERVER_HOST: zabbix-server
+      PHP_TZ: Africa/Lagos
+    ports:
+      - "8080:8080"
+```
+**Start Zabbix Stac**
+```
+docker compose up -d
+```
+
+**Access Zabbix Web Interface**
+```
+http://localhost:8080
+```
+Default Credentials
+- Username: `Admin`
+- Password: `zabbix`
+
+
+
