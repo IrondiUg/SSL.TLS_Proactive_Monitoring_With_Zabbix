@@ -82,8 +82,8 @@ services:
     environment:
       MYSQL_DATABASE: zabbix
       MYSQL_USER: zabbix
-      MYSQL_PASSWORD: zabbix_pass
-      MYSQL_ROOT_PASSWORD: root_pass
+      MYSQL_PASSWORD: (put a convenient password here)
+      MYSQL_ROOT_PASSWORD: (put a convenient password here)
     command:
       --character-set-server=utf8mb4
       --collation-server=utf8mb4_bin
@@ -100,7 +100,7 @@ services:
       DB_SERVER_HOST: mysql-server
       MYSQL_DATABASE: zabbix
       MYSQL_USER: zabbix
-      MYSQL_PASSWORD: zabbix_pass
+      MYSQL_PASSWORD: (put a convenient password here/must be same as above)
     ports:
       - "10051:10051"
 
@@ -115,7 +115,7 @@ services:
       DB_SERVER_HOST: mysql-server
       MYSQL_DATABASE: zabbix
       MYSQL_USER: zabbix
-      MYSQL_PASSWORD: zabbix_pass
+      MYSQL_PASSWORD: (put a convenient password here/must be same as above)
       ZBX_SERVER_HOST: zabbix-server
       PHP_TZ: Africa/Lagos
     ports:
