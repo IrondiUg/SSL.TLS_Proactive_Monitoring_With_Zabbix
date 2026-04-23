@@ -130,7 +130,9 @@ docker compose up -d
 ```
 http://localhost:8080
 ```
-Default Credentials
+**Default Credentials**
+<img width="369" height="388" alt="Clipped_image_20260423_174518" src="https://github.com/user-attachments/assets/d4645675-2be2-4a7b-871a-8df99cb3ecb5" />
+
 - Username: `Admin`
 - Password: `zabbix`
 
