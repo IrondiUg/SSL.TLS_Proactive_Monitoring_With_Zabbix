@@ -70,7 +70,7 @@ sudo systemctl enable docker
 sudo apt install docker-compose-plugin
 ```
 ---
-**Create docker-compose.yml and paste exact content**
+**Create docker-compose.yml and paste exact content (edit pasawords as required)**
 ```
 version: '3.5'
 
